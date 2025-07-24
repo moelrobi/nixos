@@ -3,6 +3,6 @@
 {
     imports = [
         ./base.nix
-        ./machines/nexus
+        ./machines/ionade
     ];
 }
