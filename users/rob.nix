@@ -16,12 +16,12 @@
 
     home.packages = with pkgs; [
       # Add any additional packages you want to install for the user here
+      steam
     ];
 
     fonts.fontconfig.enable = true;
 
     programs.firefox.enable = true;
-    programs.steam.enable = true;
     programs.fish.enable = true;
 
     services.flameshot.enable = true;
