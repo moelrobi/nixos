@@ -33,7 +33,6 @@
             enable = true;
             settings = {
                 "org/gnome/desktop/input-sources" = {
-	    	        mru-sources="[('xkb', 'de')]";
                     sources="[('xkb', 'de')]";
                 };
                 "org/gnome/desktop/interface" = {

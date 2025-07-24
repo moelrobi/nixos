@@ -55,6 +55,7 @@
 
     services.dbus.enable = true;
     services.gvfs.enable = true;
+
     programs.nix-ld.enable = true;
     programs.fish.enable = true;
 
@@ -155,6 +156,18 @@
     services.gnome.gnome-keyring.enable = true;
 
     programs.dconf.enable = true;
+    programs.dconf.profiles.user.databases = [
+        {
+            settings = {
+                "org/gnome/desktop/input-sources" = {
+                    sources = "[('xkb', 'de')]";
+                };
+                "org/gnome/desktop/interface" = {
+                    color-scheme = "prefer-dark";
+                };
+            };
+        }
+    ];
 
     security.polkit.enable = true;
 
