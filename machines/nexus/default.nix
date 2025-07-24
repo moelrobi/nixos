@@ -6,7 +6,7 @@
         ./../../users/rob.nix
     ];
 
-    networking.hostname = "nexus";
+    networking.hostName = "nexus";
 
     hardware.nvidia = {
         modesetting.enable = true;
