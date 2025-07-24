@@ -57,6 +57,7 @@
     services.dbus.enable = true;
     services.gvfs.enable = true;
     programs.nix-ld.enable = true;
+    programs.fish.enable = true;
 
     services.cockpit = {
         enable = true;
