@@ -57,7 +57,6 @@
 
     services.dbus.enable = true;
     services.gvfs.enable = true;
-    services.zsh.enable = true;
     programs.nix-ld.enable = true;
 
     services.cockpit = {
