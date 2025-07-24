@@ -20,6 +20,7 @@
       discord
       steam
       spotify
+      vscode
     ];
 
     fonts.fontconfig.enable = true;
@@ -39,6 +40,11 @@
                 color-scheme = "prefer-dark";
             };
         };
+    };
+
+    programs.git = {
+       userEmail = "robin@moeller.mx";
+       userName = "Robin Möller";     
     };
 
     programs.ssh = {
