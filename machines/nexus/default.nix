@@ -24,4 +24,9 @@
     services.xserver.desktopManager.gnome.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
 
+    services.xserver.xkb.layout = "de";
+
+    programs.firefox.enable = true;
+    programs._1password.enable = true;
+    programs._1password-gui.enable = true;
 }
