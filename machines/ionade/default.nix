@@ -5,7 +5,7 @@
         ./hardware-configuration.nix
     ];
 
-    networking.hostname = "ionade";
+    networking.hostName = "ionade";
     networking.useDHCP = true;
 
     hardware.nvidia = {
