@@ -6,7 +6,6 @@
     ];
 
     networking.hostName = "ionade";
-    networking.useDHCP = true;
 
     hardware.nvidia = {
         modesetting.enable = true;

@@ -6,7 +6,6 @@
     ];
 
     networking.hostname = "nexus";
-    networking.useDHCP = true;
 
     hardware.nvidia = {
         modesetting.enable = true;
