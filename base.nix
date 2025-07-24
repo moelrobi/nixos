@@ -98,13 +98,6 @@
 
     services.blueman.enable = true;
 
-    services.earlymoon = {
-        enable = true;
-        freeSwapThreshold = 2;
-        freeMemThreshold = 2;
-        enableNotifications = true;
-    };
-
     environment.systemPackages = with pkgs; [
         curl
         dig
