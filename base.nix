@@ -139,14 +139,13 @@
     };
 
     fonts = {
-        enable = true;
         packages = with pkgs; [
             hack-font
             noto-fonts
             noto-fonts-cjk-sans
             noto-fonts-emoji
             roboto
-            font-awsome
+            font-awesome
             google-fonts
 
             corefonts
