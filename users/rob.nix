@@ -17,6 +17,8 @@
     home.packages = with pkgs; [
       # Add any additional packages you want to install for the user here
       steam
+      _1password
+      _1password-gui
     ];
 
     fonts.fontconfig.enable = true;
