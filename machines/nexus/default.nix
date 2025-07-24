@@ -3,6 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ./../../users/rob.nix
     ];
 
     networking.hostname = "nexus";

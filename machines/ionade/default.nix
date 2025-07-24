@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./../../users/rob_headless.nix
         ./hardware-configuration.nix
     ];
 
