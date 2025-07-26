@@ -21,6 +21,7 @@
     home.packages = with pkgs; [
       # Add any additional packages you want to install for the user here
       alvr
+      ansible
       discord
       fastfetch
       steam
