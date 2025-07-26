@@ -93,6 +93,7 @@
   services.blueman.enable = true;
 
   environment.systemPackages = with pkgs; [
+    age
     alejandra
     curl
     dig
@@ -105,6 +106,7 @@
     lsof
     rsync
     screen
+    sops
     tmux
     tree
     vim
