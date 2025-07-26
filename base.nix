@@ -109,6 +109,7 @@
     sops
     tmux
     tree
+    unzip
     vim
     wget
     wireguard-tools
