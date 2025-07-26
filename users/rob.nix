@@ -55,6 +55,11 @@
       enable = true; # Ensure the Git program is enabled
       userEmail = "robin@moeller.mx";
       userName = "Robin Möller";
+      extraConfig = {
+        init = {
+          defaultBranch = "main"; # Set the default branch name for new repositories
+        };
+      };
     };
 
     programs.ssh = {
