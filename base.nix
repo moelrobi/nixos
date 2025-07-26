@@ -59,17 +59,6 @@
     programs.nix-ld.enable = true;
     programs.fish.enable = true;
 
-    services.cockpit = {
-        enable = true;
-        port = 9090;
-        openFirewall = true;
-        settings = {
-            WebService = {
-                AllowUnencrypted = true;
-            };
-        };
-    };
-
     users.users.rob = {
         isNormalUser = true;
         shell = pkgs.fish;
