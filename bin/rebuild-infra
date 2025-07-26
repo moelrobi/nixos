@@ -10,6 +10,16 @@ pushd ~/infra-nix
 
 git pull
 
+echo "Updating SOPS data keys for all secrets…"
+# rekursiv alle .enc-Dateien finden und bearbeiten
+find secrets -type f -name '*.enc' | while read -r secret; do
+  echo "  → updatekeys $secret"
+  sops --config .sops.yaml updatekeys -y "$secret"
+done
+
+# nach Änderung an den .enc-Files committest du sie gleich mit:
+git add secrets
+
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."

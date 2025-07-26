@@ -21,6 +21,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  networking.hosts = {
+    "10.0.100.46" = ["web-nix.uwu.tools" "web-nix" "i.uwu.tools"];
+  };
+
   services.xserver.enable = true;
   services.xserver.xkb.layout = "de";
   services.xserver.displayManager.gdm.enable = true;
