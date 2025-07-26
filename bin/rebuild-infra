@@ -10,7 +10,7 @@ pushd ~/infra-nix
 
 git pull
 
-echo "Updating SOPS data keys for all secrets…"
+echo "🔑 Updating SOPS data keys for all secrets…"
 # rekursiv alle .enc-Dateien finden und bearbeiten
 find secrets -type f -name '*.enc' | while read -r secret; do
   echo "  → updatekeys $secret"
@@ -34,15 +34,18 @@ alejandra . &>/dev/null \
 # Shows your changes
 git diff -U0 '*.nix'
 
-echo "NixOS Rebuilding..."
+echo "⏰ NixOS Rebuilding..."
 
 # Initialize summary variable
 summary="NixOS rebuild summary ($(date))"
 
 for file in hosts/*.nix; do
+  # Skip if the file is not a Nix file or if it is not the base file
+  [[ "$file" != *.nix && "$file" == base.nix ]] && continue
+
   host=$(basename "$file" .nix)
   fqdn=$(basename "$file" .nix).uwu.tools
-  echo "Rebuilding on host: $host"
+  echo "🏃‍♂️ Rebuilding on host: $host"
 
   nixos-rebuild switch --target-host rob@$fqdn --flake ".#$host" --use-remote-sudo &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
