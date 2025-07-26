@@ -17,15 +17,22 @@
 
         home.packages = with pkgs; [
           # Add any additional packages you want to install for the user here
+          alvr
           discord
+          fastfetch
           steam
           spotify
+          r2modman
           vscode
         ];
 
         fonts.fontconfig.enable = true;
 
         programs.fish.enable = true;
+        programs.fish.interactiveShellInit = ''
+            set fish_greeting
+            set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
+        '';
 
         services.flameshot.enable = true;
 

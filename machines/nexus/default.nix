@@ -28,4 +28,12 @@
     programs.firefox.enable = true;
     programs._1password.enable = true;
     programs._1password-gui.enable = true;
+
+    environment.variables = {
+        SSH_AUTH_SOCK = "~/.1password/agent.sock";
+    };
+
+    environment.sessionVariables = {
+        SSH_AUTH_SOCK = "~/.1password/agent.sock";
+    };
 }

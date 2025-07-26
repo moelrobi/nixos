@@ -151,8 +151,6 @@
     };
 
     programs.gnupg.agent.enable = true;
-    programs.gnupg.agent.enableSSHSupport = true;
-
     services.gnome.gnome-keyring.enable = true;
 
     programs.dconf.enable = true;
