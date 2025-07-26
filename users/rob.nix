@@ -36,6 +36,7 @@
     programs.fish.interactiveShellInit = ''
       set fish_greeting
       set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
+      set -gx SOPS_AGE_KEY_FILE ~/infra-nix/age.key
     '';
 
     services.flameshot.enable = true;
