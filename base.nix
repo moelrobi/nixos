@@ -147,6 +147,8 @@
   programs.gnupg.agent.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  services.systembus-notify.enable = true;
+
   programs.dconf.enable = true;
   programs.dconf.profiles.user.databases = [
     {
