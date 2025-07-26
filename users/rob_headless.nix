@@ -1,6 +1,9 @@
-{ pkgs, config, lib, ... }:
-
 {
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   home-manager.users.rob = {
     home.stateVersion = "25.05";
 
@@ -10,8 +13,8 @@
     home.homeDirectory = "/home/rob";
 
     xdg.userDirs = {
-        enable = true;
-        createDirectories = true;
+      enable = true;
+      createDirectories = true;
     };
 
     home.packages = with pkgs; [

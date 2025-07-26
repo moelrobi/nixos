@@ -12,11 +12,8 @@
 # A rebuild script that commits on a successful build
 set -e
 
-# Edit your config
-$EDITOR configuration.nix
-
 # cd to your config dir
-pushd ~/dotfiles/nixos/
+pushd /etc/nixos/
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then
@@ -36,6 +33,10 @@ echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
 sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+
+# Set the keyboard layout to German
+# (this is a workaround becuase the configuration resets every rebuild)
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'de')]"
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)

@@ -1,21 +1,23 @@
-{ pkgs, config, ... }:
-
 {
-    imports = [
-        ./../../users/rob_headless.nix
-        ./hardware-configuration.nix
-    ];
+  pkgs,
+  config,
+  ...
+}: {
+  imports = [
+    ./../../users/rob_headless.nix
+    ./hardware-configuration.nix
+  ];
 
-    networking.hostName = "ionade";
+  networking.hostName = "ionade";
 
-    hardware.nvidia = {
-        modesetting.enable = true;
-        powerManagement.enable = false;
-        powerManagement.finegrained = false;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
 
-        open = false;
+    open = false;
 
-        nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 }

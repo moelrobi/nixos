@@ -1,13 +1,16 @@
-{ config, pkgs, options, ... }:
-
 {
-    home-manager.useUserPackages = true;
-    home-manager.useGlobalPkgs = true;
-    
-    imports = [
-        ./base.nix
-        
-        # ./machines/ionade
-        ./machines/nexus
-    ];
+  config,
+  pkgs,
+  options,
+  ...
+}: {
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+
+  imports = [
+    ./base.nix
+
+    # ./machines/ionade
+    ./machines/nexus
+  ];
 }
