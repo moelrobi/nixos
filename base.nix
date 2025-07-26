@@ -9,7 +9,8 @@
     <home-manager/nixos>
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
+  boot.loader.limine.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = ["btrfs"];
 
@@ -99,6 +100,7 @@
     htop
     iotop
     jq
+    libnotify
     lsof
     rsync
     screen
