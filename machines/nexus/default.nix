@@ -21,10 +21,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  networking.hosts = {
-    "10.0.10.20" = ["web-nix" "web-nix.uwu.tools" "discord.scprp.de"];
-  };
-
   services.xserver.enable = true;
   services.xserver.xkb.layout = "de";
   services.xserver.displayManager.gdm.enable = true;
