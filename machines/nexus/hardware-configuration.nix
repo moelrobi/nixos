@@ -74,6 +74,17 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
 
+  systemd.services.wakeonlan = {
+    description = "Reenable Wake-on-LAN every boot";
+    after = ["network.target"];
+    serviceConfig = {
+      Type = "simple";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.ethtool}/sbin/ethtool -s enp5s0 wol g";
+    };
+    wantedBy = ["default.target"];
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

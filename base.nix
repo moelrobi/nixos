@@ -97,6 +97,7 @@
     alejandra
     curl
     dig
+    ethtool
     git
     gparted
     htop
