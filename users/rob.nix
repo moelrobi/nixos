@@ -27,6 +27,7 @@
       steam
       spotify
       r2modman
+      remmina
       vscode
     ];
 
