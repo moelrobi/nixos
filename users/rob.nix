@@ -29,6 +29,7 @@
       r2modman
       remmina
       vscode
+      zoom-us
     ];
 
     fonts.fontconfig.enable = true;
