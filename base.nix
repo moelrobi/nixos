@@ -91,6 +91,7 @@
   hardware.bluetooth.enable = true;
 
   services.blueman.enable = true;
+  services.usbmuxd.enable = true;
 
   environment.systemPackages = with pkgs; [
     age
@@ -104,6 +105,7 @@
     iotop
     jq
     libnotify
+    libimobiledevice
     lsof
     rsync
     screen
