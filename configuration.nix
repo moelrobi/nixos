@@ -11,6 +11,6 @@
     ./base.nix
 
     # ./machines/ionade
-    ./machines/nexus
+    ./machines/maelle
   ];
 }
