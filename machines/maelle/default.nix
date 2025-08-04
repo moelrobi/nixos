@@ -27,6 +27,13 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
   programs.firefox.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
