@@ -25,7 +25,7 @@ git diff -U0 '*.nix'
 echo "⏰ NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo nixos-rebuild switch --flake .#$(hostname) &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Set the keyboard layout to German
 # (this is a workaround becuase the configuration resets every rebuild)

@@ -5,10 +5,6 @@
   options,
   ...
 }: {
-  imports = [
-    <home-manager/nixos>
-  ];
-
   boot.loader.limine.enable = true;
   boot.loader.limine.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -188,8 +184,6 @@
   '';
 
   networking.firewall.enable = false;
-
-  system.copySystemConfiguration = true;
 
   system.stateVersion = "25.05"; # Did you read the comment above?
 }

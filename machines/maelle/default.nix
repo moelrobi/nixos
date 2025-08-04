@@ -1,5 +1,6 @@
 {
   pkgs,
+  unstable,
   config,
   ...
 }: {
@@ -42,6 +43,7 @@
 
   services.sunshine = {
     enable = true;
+    package = unstable.sunshine;
     autoStart = true;
     capSysAdmin = true;
     openFirewall = true;

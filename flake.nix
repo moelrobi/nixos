@@ -1,5 +1,5 @@
 {
-  descriotion = "Flake";
+  description = "Flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     flake-utils.url = "github:numtide/flake-utils";
@@ -17,23 +17,23 @@
     flake-utils,
     home-manager,
     ...
-  }:
-    flake-utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-        unstable = nixpkgs-unstable.legacyPackages.${system};
-        hm = home-manager.packages.${system}.home-manager;
-      in {
-        nixosConfigurations = {
-          maelle = pkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              ./base.nix
-              ./machines/maelle.nix
-              home-manager.nixosModules.home-manager
-            ];
-          };
-        };
-      }
-    );
+  }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    unstable = nixpkgs-unstable.legacyPackages.${system};
+    hm = home-manager.packages.${system}.home-manager;
+  in {
+    nixosConfigurations = {
+      maelle = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {unstable = unstable;};
+        modules = [
+          ./base.nix
+          ./machines/maelle/default.nix
+          ./machines/maelle/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
+      };
+    };
+  };
 }
