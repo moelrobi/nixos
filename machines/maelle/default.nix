@@ -53,6 +53,11 @@
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    # Add any additional packages you want to install for the system here
+    lutris
+  ];
+
   environment.variables = {
     SSH_AUTH_SOCK = "~/.1password/agent.sock";
   };
