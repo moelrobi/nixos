@@ -22,6 +22,7 @@
       # Add any additional packages you want to install for the user here
       alvr
       ansible
+      bottles
       discord
       fastfetch
       steam

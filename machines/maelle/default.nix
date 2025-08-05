@@ -54,8 +54,7 @@
   programs._1password-gui.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # Add any additional packages you want to install for the system here
-    lutris
+    # Add any additional packages you want to install for the system heres
   ];
 
   environment.variables = {
