@@ -24,6 +24,7 @@
       ansible
       discord
       fastfetch
+      lutris
       steam
       spotify
       r2modman
