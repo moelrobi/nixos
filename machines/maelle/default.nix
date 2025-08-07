@@ -55,6 +55,7 @@
 
   environment.systemPackages = with pkgs; [
     # Add any additional packages you want to install for the system heres
+    nodejs
   ];
 
   environment.variables = {
